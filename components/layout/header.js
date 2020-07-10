@@ -23,7 +23,11 @@ const Header = () => {
                 </Nav>
             ): null}
             <HeaderStyle>
-                <img src="https://ciecwtc.com/img/ciec/ciec.png" alt="CIECWTC"/>
+                <Link href="/">
+                    <a>
+                        <img src="https://ciecwtc.com/img/ciec/ciec.png" alt="CIECWTC"/>
+                    </a>
+                </Link>
             </HeaderStyle>        
         </>
      );
