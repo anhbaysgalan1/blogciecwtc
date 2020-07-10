@@ -1,14 +1,21 @@
 import React from 'react';
+
 import {CategoriesStyle, Btn} from './ui/general';
+import useNotas from '../hooks/useNotas';
+import Category from './category';
 
 const Categories = () => {
+
+    const {notas} = useNotas ('creado'); 
+
     return ( 
         <CategoriesStyle>
-            <Btn>#COVID-19</Btn>
-            <Btn>#Turismo de Reuniones</Btn>
-            <Btn>#Eventos</Btn>
-            <Btn>#Sociales</Btn>
-            <Btn>#CIECWTC</Btn>
+            {notas.map(nota => (
+                <Category
+                    key={nota.id}
+                    nota={nota}
+                />
+            ))}
         </CategoriesStyle>
      );
 }

@@ -1,5 +1,32 @@
 import styled from '@emotion/styled';
 
+export const Nav = styled.nav`
+    background-color:#004b84;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    a{
+        margin:.5em 1em;
+        background-color:#b2ab8a;
+        box-shadow:rgba(0, 0, 0, 0.1) 0px 0px 3px 0px;
+        border: 1px solid #b2ab8a;
+        padding: .2em 2em;
+        text-transform: uppercase;
+        text-align:center;
+        @media (max-width: 768px) {        
+            font-size: 1em;  
+            padding: .2em 1em;
+            margin:.5em .5em;
+        } 
+        &:hover{
+            transition: all 0.4s ease-out !important;
+            background-color:transparent !important;
+            color:#b2ab8a !important;
+            border: 1px solid #b2ab8a;
+        }
+    }
+`;
+
 export const HeaderStyle = styled.header`
     background-color: rgba(246, 246, 246, 0);
         text-align:center;
@@ -50,7 +77,7 @@ export const CategoriesStyle = styled.section`
 export const Btn = styled.a`
     background-color:#DBDBDB;
     box-shadow:rgba(0, 0, 0, 0.1) 0px 0px 3px 0px;
-    padding: .2em 2em;
+    padding: .2em 1.5em;
     text-transform: uppercase;
     text-align:center;
     color:#004b84;
@@ -76,12 +103,15 @@ export const NotesStyle = styled.section`
 
 export const NotePreviewStyle = styled.div`  
     box-shadow:rgba(0, 0, 0, 0.2) 0px 1px 4px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     section{
-        padding: 1em 2em 0 2em;
+        padding: 1em 2em 0 2em;        
     }
     div{
+        padding: 0 2em 0;
         background-color: #e5f5fb;
-        padding: 0 2em;
         display:flex;
         align-items:center;
         justify-content: space-between;
@@ -90,6 +120,20 @@ export const NotePreviewStyle = styled.div`
         }
     }
 `;
+
+export const NoteStyle = styled.div`
+    width: 60vw;
+    margin: 0 auto;
+    padding: 1em 0 5em 0;
+    text-align:center;
+    h2{
+        margin: 1em 0;
+    }
+    p{
+        text-align: justify;
+    }
+`;
+
 
 export const LoginStyle = styled.section`
     height: 100vh;
@@ -163,6 +207,15 @@ export const Form = styled.section`
             color:#3f3f3f;
             border:1px solid #ffffff;
         }
+        select{
+            display: block;
+            width: 100%;
+            padding: 1em;
+            border:1px solid #ffffff;
+            border-radius:10px;  
+            color:#3f3f3f;
+            -webkit-appearance: none;
+        }
     }        
     @media (min-width: 768px) {        
         width: 70vw;
@@ -184,4 +237,14 @@ export const FormInput = styled.input`
         color:#004b84 !important;
         border: 1px solid #004b84;
     }
+`;
+
+export const Error = styled.p`
+    background-color: #DE4D4D;
+    padding: .5rem;
+    font-weight: 700;
+    font-size: .8rem;
+    color: #FFF;
+    text-align: center;
+    margin: .5rem 0;
 `;

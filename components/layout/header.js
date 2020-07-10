@@ -1,11 +1,31 @@
-import React from 'react';
-import {HeaderStyle} from '../ui/general';
+import React, {useState, useEffect ,useContext} from 'react';
+import Link from 'next/link'
+import {FirebaseContext} from '../../firebase';
+
+import {Nav, HeaderStyle} from '../ui/general';
 
 const Header = () => {
+
+    const {usuario , firebase} = useContext(FirebaseContext);
     return ( 
-        <HeaderStyle>
-            <img src="https://ciecwtc.com/img/ciec/ciec.png" alt="CIECWTC"/>
-        </HeaderStyle>
+        <>
+            {usuario ? (
+                <Nav>
+                    <Link href="/">
+                        <a>Notas</a>
+                    </Link>
+                    <Link href="/note">
+                        <a>+ Nota</a>
+                    </Link>
+                    <a
+                        onClick={() => firebase.cerrarSesion()}
+                    >Salir</a>            
+                </Nav>
+            ): null}
+            <HeaderStyle>
+                <img src="https://ciecwtc.com/img/ciec/ciec.png" alt="CIECWTC"/>
+            </HeaderStyle>        
+        </>
      );
 }
  

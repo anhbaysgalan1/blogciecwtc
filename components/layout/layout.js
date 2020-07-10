@@ -41,7 +41,7 @@ const Layout = props => {
               }
               h2{
                 font-size: 2.4rem;                                    
-                line-height: 2.2rem;
+                line-height: 3rem;
                 color:#004b84;
                 margin: .5em 0;
               }

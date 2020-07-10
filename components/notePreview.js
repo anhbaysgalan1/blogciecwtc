@@ -1,22 +1,40 @@
 import React from 'react';
+import Link from 'next/link';
+
 import {NotePreviewStyle} from './ui/general';
 
-const NotePreview = () => {
+const NotePreview = ({nota}) => {
+
+    const {id, categoria, titulo, preview, urlimagen, lectura, slug} = nota;
+    
     return ( 
         <NotePreviewStyle>
-            <img 
-                src="/img/leed.png"
-                alt=""
-            />
+            <Link href="/notes/[id]" as={`/notes/${id}`}>
+                <a>
+                    <img 
+                        src={urlimagen}
+                        alt={titulo}
+                    />
+                </a>
+            </Link>
             <section>
-                <h3>Certificación LEED: el mejor reconocimiento para proyectos sustentables.</h3>
-                <h4>Turismo de Reuniones</h4>
-                <p>En la actualidad el círculo empresarial es uno de los más competitivos del mundo, constantemente se generan proyectos que buscan un crecimiento exponencial constante...</p>
+                <Link href="/notes/[id]" as={`/notes/${id}`}>
+                    <a>
+                        <h3>{titulo}</h3>
+                    </a>
+                </Link>                
+                <h4>{categoria}</h4>    
+                <Link href="/notes/[id]" as={`/notes/${id}`}>            
+                    <a>
+                        <p>{preview}</p>
+                    </a>
+                </Link>
             </section>
             <div>
                 <p>CIECWTC</p>
-                <p>Lectura 2 min</p>
+                <p>Lectura en {lectura}</p>
             </div>
+            
         </NotePreviewStyle>
      );
 }
