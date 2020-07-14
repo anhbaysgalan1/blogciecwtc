@@ -136,7 +136,7 @@ export const NotePreviewStyle = styled.div`
 `;
 
 export const NoteStyle = styled.div`
-    width: 60vw;
+    width: 90vw;
     margin: 0 auto;
     padding: 1em 0 5em 0;
     text-align:center;
@@ -151,6 +151,15 @@ export const NoteStyle = styled.div`
     p{
         text-align: justify;
     }
+    @media (min-width: 768px) {        
+        width: 60vw;
+    } 
+    @media (max-width: 768px) {        
+        h2{
+            font-size: 1.4em;
+            line-height: 1.4em;
+        }
+    }  
 `;
 
 

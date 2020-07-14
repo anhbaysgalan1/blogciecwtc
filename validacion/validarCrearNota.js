@@ -31,9 +31,5 @@ export default function validarCrearNota(valores) {
         errores.lectura = "Tiempo de Lectura Obligatorio";
     }   
 
-    if(!valores.slug) {
-        errores.slug = "Slug Obligatorio";
-    }   
-
     return errores;
 }

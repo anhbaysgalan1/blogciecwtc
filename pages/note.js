@@ -27,8 +27,7 @@ const STATE_INICIAL = {
     parrafo8:'',
     parrafo9:'',
     parrafo10:'',
-    lectura:'',
-    slug:''
+    lectura:''
   }
 
 const Note = () => {
@@ -42,7 +41,7 @@ const Note = () => {
     const [error, guardarError] = useState(false);
     const {valores, errores, handleChange, handleSubmit} = useValidacion(STATE_INICIAL, validarCrearNota, crearNota);
 
-    const { categoria, titulo, preview, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, lectura, slug} = valores;    
+    const { categoria, titulo, preview, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, lectura} = valores;    
     
     const router = useRouter();
     const { usuario, firebase } = useContext(FirebaseContext);
@@ -65,7 +64,6 @@ const Note = () => {
             parrafo9,
             parrafo10,
             lectura,
-            slug,
             creado: Date.now(), 
             creador: {
               id: usuario.uid,
@@ -257,16 +255,6 @@ const Note = () => {
                         onChange={handleChange}                                          
                     />
                     {errores.lectura && <Error>{errores.lectura}</Error> }  
-                    <label htmlFor="slug">Slug:</label>
-                    <input
-                        type="text"
-                        id="slug"
-                        name="slug"   
-                        placeholder="Slug (Link para ingresar)*" 
-                        value={slug}
-                        onChange={handleChange}                                          
-                    />
-                    {errores.slug && <Error>{errores.slug}</Error> }                      
                 </div>
                 {error && <Error>{error}</Error>}                                                                                                                                                                                                                    
                 <FormInput

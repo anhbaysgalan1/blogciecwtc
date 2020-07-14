@@ -4,7 +4,7 @@ import { FirebaseContext } from '../../firebase';
 
 import Layout from '../../components/layout/layout';
 import Categories from '../../components/categories';
-import {NoteStyle} from '../../components/ui/general';
+import {NoteStyle, Btn} from '../../components/ui/general';
 
 const Note = () => {
 
@@ -17,7 +17,7 @@ const Note = () => {
     const {query : {id}} = router;
 
     // context de firebase
-    const { firebase } = useContext(FirebaseContext);        
+    const { firebase, usuario } = useContext(FirebaseContext);        
 
     useEffect(() => {
       if(id && consultarDB) {
@@ -36,6 +36,21 @@ const Note = () => {
           obtenerNota();
       }
     }, [id]);
+
+      // elimina un producto de la bd
+      const eliminarProducto = async () => {
+
+        if(!usuario) {
+            return router.push('/login')
+        }
+
+        try {
+            await firebase.db.collection('notas').doc(id).delete();
+            router.push('/')
+        } catch (error) {
+            console.log(error);
+        }
+      }    
 
     //Obtener todos los datos de las historias
     const { titulo, categoria, urlimagen, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, lectura} = nota;
@@ -60,7 +75,8 @@ const Note = () => {
           <p>{parrafo8}</p>
           <p>{parrafo9}</p>
           <p>{parrafo10}</p>
-        </NoteStyle>
+          {usuario ? <Btn onClick={eliminarProducto}>Eliminar Nota</Btn> : null}
+        </NoteStyle>        
       </Layout>
     );
 }
