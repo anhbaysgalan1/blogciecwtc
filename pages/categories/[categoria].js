@@ -20,14 +20,14 @@ const Categoria = () => {
     const [resultado, guardarResultado ] = useState([]);
 
     useEffect(() => {
-        const busqueda = categoria;
+        const busqueda = categoria.toLowerCase();
         const filtro =  notas.filter(nota => {
           return (
             nota.categoria.toLowerCase().includes(busqueda) 
           )
         });
         guardarResultado(filtro);
-    }, [notas]);
+    }, [categoria, notas]);
 
     console.log(resultado);
     return (
