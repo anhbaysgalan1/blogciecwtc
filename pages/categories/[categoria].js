@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { FirebaseContext } from '../../firebase';
 
 import {NotesStyle} from '../../components/ui/general';
+import Hero from '../../components/hero';
 import Layout from '../../components/layout/layout';
 import Categories from '../../components/categories';
 import useNotas from '../../hooks/useNotas'; 
@@ -32,6 +33,9 @@ const Categoria = () => {
     console.log(resultado);
     return (
         <Layout>
+            <Hero
+            title={categoria}
+            />
             <Categories/>
             <NotesStyle>
                 {resultado.map(nota => (

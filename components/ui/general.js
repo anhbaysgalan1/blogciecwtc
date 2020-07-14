@@ -70,7 +70,13 @@ export const CategoriesStyle = styled.section`
     align-items: center;
     justify-content: space-between;
     @media (max-width: 768px) {        
-        display:none;
+        width: 90vw;
+        margin: 0 auto;
+        display: grid;
+        padding: 2em 0 0 0;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: .5em;
+        align-items: center;
     }            
 `;
 
@@ -85,6 +91,14 @@ export const Btn = styled.a`
         transition: all 0.4s ease-out;
         background-color:#b2ab8a;
         color:#3f3f3f;
+    }
+    &:active {
+        background-color:#b2ab8a;
+        color:#3f3f3f;      
+    }
+    &.active {
+        background-color:#b2ab8a;
+        color:#3f3f3f;      
     }
 `;
 
@@ -127,7 +141,12 @@ export const NoteStyle = styled.div`
     padding: 1em 0 5em 0;
     text-align:center;
     h2{
-        margin: 1em 0;
+        margin: 1em 0 0 0;
+    }
+    h3{
+        margin: 1em 0 0 0;
+        color:#b2ab8a;
+        font-size: 1.4rem;                                    
     }
     p{
         text-align: justify;

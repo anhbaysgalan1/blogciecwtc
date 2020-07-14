@@ -49,6 +49,7 @@ const Note = () => {
             alt={titulo}
           />
           <h2>{titulo}</h2>
+          <h3>{categoria}</h3>
           <p>{parrafo1}</p>
           <p>{parrafo2}</p>
           <p>{parrafo3}</p>
