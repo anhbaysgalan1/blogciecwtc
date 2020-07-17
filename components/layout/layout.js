@@ -1,7 +1,9 @@
 import React from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
+
 import Header from './header'
+import Footer from './footer'
 
 const Layout = props => {
     return (
@@ -16,7 +18,8 @@ const Layout = props => {
             <Header/>
             <main>
                 {props.children}
-            </main>    
+            </main>   
+            <Footer/>
             <style jsx global>{`
             html,
             body { 

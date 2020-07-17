@@ -162,6 +162,18 @@ export const NoteStyle = styled.div`
     }  
 `;
 
+export const Share = styled.div`
+    padding: 1em 0 0 0;
+    h3{
+        text-align: center;
+        padding: 0 0 .5em 0;
+    }
+    img{
+        height: 2em;
+        border-radius: 8px;
+        padding: 0 1em;
+    }
+`;
 
 export const LoginStyle = styled.section`
     height: 100vh;
@@ -275,4 +287,13 @@ export const Error = styled.p`
     color: #FFF;
     text-align: center;
     margin: .5rem 0;
+`;
+
+export const FooterStyle = styled.footer`
+    background-color: #004b84;
+    text-align:center;
+    padding: 1em 0;
+    a{
+        color: #ffffff;
+    }
 `;

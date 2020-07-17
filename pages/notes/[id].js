@@ -4,7 +4,7 @@ import { FirebaseContext } from '../../firebase';
 
 import Layout from '../../components/layout/layout';
 import Categories from '../../components/categories';
-import {NoteStyle, Btn} from '../../components/ui/general';
+import {NoteStyle, Btn, Share} from '../../components/ui/general';
 
 const Note = () => {
 
@@ -53,7 +53,12 @@ const Note = () => {
       }    
 
     //Obtener todos los datos de las historias
-    const { titulo, categoria, urlimagen, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, lectura} = nota;
+    const {titulo, categoria, urlimagen, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, lectura} = nota;
+
+    const URL = 'https://blog-ciecwtc.vercel.app/notes/' + id;
+    var URLFacebook = 'https://www.facebook.com/sharer/sharer.php?u=' + URL;
+    var URLTwitter = 'https://twitter.com/intent/tweet?text=&url=' + URL;
+    var URLLinkedin = 'https://www.linkedin.com/sharing/share-offsite/?url=' + URL;
 
     return (
       <Layout>
@@ -75,6 +80,12 @@ const Note = () => {
           <p>{parrafo8}</p>
           <p>{parrafo9}</p>
           <p>{parrafo10}</p>
+          <Share>
+            <h3>Compartir</h3>
+            <a href={URLFacebook} target="blank"><img src="/icon/facebook.svg" alt="Facebook"/></a>
+            <a href={URLTwitter} target="blank"><img src="/icon/twitter.svg" alt="Twitter"/></a>
+            <a href={URLLinkedin} target="blank"><img src="/icon/instagram.svg" alt="Instagram"/></a>
+          </Share>
           {usuario ? <Btn onClick={eliminarProducto}>Eliminar Nota</Btn> : null}
         </NoteStyle>        
       </Layout>
