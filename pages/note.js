@@ -27,6 +27,7 @@ const STATE_INICIAL = {
     parrafo8:'',
     parrafo9:'',
     parrafo10:'',
+    youtube:'',
     lectura:''
   }
 
@@ -41,7 +42,7 @@ const Note = () => {
     const [error, guardarError] = useState(false);
     const {valores, errores, handleChange, handleSubmit} = useValidacion(STATE_INICIAL, validarCrearNota, crearNota);
 
-    const { categoria, titulo, preview, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, lectura} = valores;    
+    const { categoria, titulo, preview, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, youtube, lectura} = valores;    
     
     const router = useRouter();
     const { usuario, firebase } = useContext(FirebaseContext);
@@ -63,6 +64,7 @@ const Note = () => {
             parrafo8,
             parrafo9,
             parrafo10,
+            youtube,
             lectura,
             creado: Date.now(), 
             creador: {
@@ -244,6 +246,15 @@ const Note = () => {
                     value={parrafo10}
                     onChange={handleChange}                
                 />
+                <label htmlFor="youtube">YouTube:</label>
+                <input
+                    type="text"
+                    id="youtube"
+                    name="youtube"                    
+                    placeholder="Video de YouTube*"   
+                    value={youtube}
+                    onChange={handleChange}                
+                /> 
                 <div>
                     <label htmlFor="lectura">Tiempo de Lectura:</label>
                     <input

@@ -53,12 +53,13 @@ const Note = () => {
       }    
 
     //Obtener todos los datos de las historias
-    const {titulo, categoria, urlimagen, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, lectura} = nota;
+    const {titulo, categoria, urlimagen, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, youtube} = nota;
 
     const URL = 'https://blog-ciecwtc.vercel.app/notes/' + id;
     var URLFacebook = 'https://www.facebook.com/sharer/sharer.php?u=' + URL;
     var URLTwitter = 'https://twitter.com/intent/tweet?text=&url=' + URL;
     var URLLinkedin = 'https://www.linkedin.com/sharing/share-offsite/?url=' + URL;
+    var URLYoutube = 'https://www.youtube.com/embed/' + youtube;
 
     return (
       <Layout>
@@ -80,6 +81,7 @@ const Note = () => {
           <p>{parrafo8}</p>
           <p>{parrafo9}</p>
           <p>{parrafo10}</p>
+          { youtube ? <iframe  width="100%" height="400" src={URLYoutube} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> : null}          
           <Share>
             <h3>Compartir</h3>
             <a href={URLFacebook} target="blank"><img src="/icon/facebook.svg" alt="Facebook"/></a>
