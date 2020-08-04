@@ -86,7 +86,7 @@ const Note = () => {
             <h3>Compartir</h3>
             <a href={URLFacebook} target="blank"><img src="/icon/facebook.svg" alt="Facebook"/></a>
             <a href={URLTwitter} target="blank"><img src="/icon/twitter.svg" alt="Twitter"/></a>
-            <a href={URLLinkedin} target="blank"><img src="/icon/instagram.svg" alt="Instagram"/></a>
+            <a href={URLLinkedin} target="blank"><img src="/icon/linkedin.svg" alt="Instagram"/></a>
           </Share>
           {usuario ? <Btn onClick={eliminarProducto}>Eliminar Nota</Btn> : null}
         </NoteStyle>        

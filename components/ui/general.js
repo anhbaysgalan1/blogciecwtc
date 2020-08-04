@@ -73,9 +73,9 @@ export const CategoriesStyle = styled.section`
         width: 90vw;
         margin: 0 auto;
         display: grid;
-        padding: 2em 0 0 0;
-        grid-template-columns: repeat(2, 1fr); 
-        gap: .5em;
+        padding: 2em 0 1em 0;
+        grid-template-columns: 1fr; 
+        gap:.5em;
         align-items: center;
     }            
 `;
@@ -163,7 +163,7 @@ export const NoteStyle = styled.div`
 `;
 
 export const Share = styled.div`
-    padding: 1em 0 0 0;
+    padding: 1em 0 4em 0;
     h3{
         text-align: center;
         padding: 0 0 .5em 0;
