@@ -78,11 +78,11 @@ const Note = () => {
     return (
       <Layout>
         <Head>                
-            <title>{titulo}</title>
+            <title>{titulo ? titulo : 'Últimas Noticias'}</title>
             <meta
                 key="description"
                 name="description"
-                content={preview}
+                content={ preview ? preview : 'Últimas Noticias'}
             />         
             <meta
                 key="og:type"
