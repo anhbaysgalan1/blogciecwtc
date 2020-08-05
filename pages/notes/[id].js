@@ -82,7 +82,7 @@ const Note = () => {
             <meta
                 key="description"
                 name="description"
-                content={ preview ? preview : 'Últimas Noticias'}
+                content={ preview ? preview : 'Últimas Noticias del Centro Internacional de Exposiciones y Convenciones WTC'}
             />         
             <meta
                 key="og:type"
@@ -92,12 +92,12 @@ const Note = () => {
             <meta
                 key="og:title"
                 name="og:title"
-                content={titulo}
+                content={titulo ? titulo : 'Últimas Noticias'}
             />
             <meta
                 key="og:description"
                 name="og:description"
-                content={preview}
+                content={ preview ? preview : 'Últimas Noticias del Centro Internacional de Exposiciones y Convenciones WTC'}
             />
             <meta
                 key="og:url"
@@ -107,7 +107,7 @@ const Note = () => {
             <meta
                 key="og:image"
                 name="og:image"
-                content={urlimagen}
+                content={urlimagen ? urlimagen : 'https://ciecwtc.com/img/ciec/ciec.png'}
             />               
             <meta name="keywords" content="CIECWTC, WTC, HIR Expo Internacional, Blog, Turismo de Reuniones"/>
             <link rel="icon" href="/favicon.ico" />
