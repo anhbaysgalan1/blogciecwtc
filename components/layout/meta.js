@@ -1,18 +1,6 @@
 import React,{useEffect} from 'react';
 import Head from 'next/head'
 
-  const data = {
-        title:'Últimas Noticias - CIECWTC',
-        description: 'Últimas Noticias del Centro Internacional de Exposiciones y Convenciones WTC',
-        openGraph: {
-            type: 'website',
-            url: 'http://blog.ciecwtc.com/',
-            title: 'Últimas Noticias - CIECWTC',
-            description: 'Últimas Noticias del Centro Internacional de Exposiciones y Convenciones WTC',
-            image: 'https://ciecwtc.com/img/ciec/ciec.png',
-        } 
-    }
-
 const Meta = ({data}) => {
     
     return ( 

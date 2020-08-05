@@ -56,12 +56,11 @@ const Note = () => {
     //Obtener todos los datos de las historias
     const {titulo, categoria, urlimagen, preview, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, youtube} = nota;
 
-    const URL = 'https://blog-ciecwtc.vercel.app/notes/' + id;
+    const URL = 'https://blog.ciecwtc.com/notes/' + id;
     var URLFacebook = 'https://www.facebook.com/sharer/sharer.php?u=' + URL;
     var URLTwitter = 'https://twitter.com/intent/tweet?text=&url=' + URL;
     var URLLinkedin = 'https://www.linkedin.com/sharing/share-offsite/?url=' + URL;
-    var URLYoutube = 'https://www.youtube.com/embed/' + youtube;
-    
+    var URLYoutube = 'https://www.youtube.com/embed/' + youtube;    
     
     const SEO = {
       title: titulo,
