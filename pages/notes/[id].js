@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from 'react';
+import Head from 'next/head'
 import { useRouter } from 'next/router';
 import { FirebaseContext } from '../../firebase';
 
@@ -56,7 +57,7 @@ const Note = () => {
     //Obtener todos los datos de las historias
     const {titulo, categoria, urlimagen, preview, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, youtube} = nota;
 
-    const URL = 'https://blog.ciecwtc.com/notes/' + id;
+    var URL = 'https://blog-ciecwtc.vercel.app//notes/' + id;
     var URLFacebook = 'https://www.facebook.com/sharer/sharer.php?u=' + URL;
     var URLTwitter = 'https://twitter.com/intent/tweet?text=&url=' + URL;
     var URLLinkedin = 'https://www.linkedin.com/sharing/share-offsite/?url=' + URL;
@@ -76,9 +77,42 @@ const Note = () => {
 
     return (
       <Layout>
-        <Meta
-          data={SEO}
-        />
+        <Head>                
+            <title>{titulo}</title>
+            <meta
+                key="description"
+                name="description"
+                content={preview}
+            />         
+            <meta
+                key="og:type"
+                name="og:type"
+                content='website'
+            />
+            <meta
+                key="og:title"
+                name="og:title"
+                content={titulo}
+            />
+            <meta
+                key="og:description"
+                name="og:description"
+                content={preview}
+            />
+            <meta
+                key="og:url"
+                name="og:url"
+                content={URL}
+            />
+            <meta
+                key="og:image"
+                name="og:image"
+                content={urlimagen}
+            />               
+            <meta name="keywords" content="CIECWTC, WTC, HIR Expo Internacional, Blog, Turismo de Reuniones"/>
+            <link rel="icon" href="/favicon.ico" />
+            <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,600;1,400&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+        </Head>
         <Categories/>
         <NoteStyle>
           <img 

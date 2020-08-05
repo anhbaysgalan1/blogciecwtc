@@ -1,14 +1,12 @@
 import React from 'react';
 import Link from 'next/link'
 
-import Meta from './meta';
 import Header from './header'
 import Footer from './footer'
 
 const Layout = props => {
     return (
-        <div>
-            <Meta/>
+        <div>          
             <Header/>
             <main>
                 {props.children}
