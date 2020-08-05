@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import { FirebaseContext } from '../../firebase';
 
+import Meta from '../../components/layout/meta';
 import Layout from '../../components/layout/layout';
 import Categories from '../../components/categories';
 import {NoteStyle, Btn, Share} from '../../components/ui/general';
@@ -35,7 +36,7 @@ const Note = () => {
           }
           obtenerNota();
       }
-    }, [id]);
+    }, [id, nota]);
 
       // elimina un producto de la bd
       const eliminarProducto = async () => {
@@ -53,16 +54,24 @@ const Note = () => {
       }    
 
     //Obtener todos los datos de las historias
-    const {titulo, categoria, urlimagen, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, youtube} = nota;
+    const {titulo, categoria, urlimagen, preview, parrafo1, parrafo2, parrafo3, parrafo4, parrafo5, parrafo6, parrafo7, parrafo8, parrafo9, parrafo10, youtube} = nota;
 
     const URL = 'https://blog-ciecwtc.vercel.app/notes/' + id;
     var URLFacebook = 'https://www.facebook.com/sharer/sharer.php?u=' + URL;
     var URLTwitter = 'https://twitter.com/intent/tweet?text=&url=' + URL;
     var URLLinkedin = 'https://www.linkedin.com/sharing/share-offsite/?url=' + URL;
     var URLYoutube = 'https://www.youtube.com/embed/' + youtube;
+    
+    const SEO = {
+      title: titulo,
+      description: preview    
+    };
 
     return (
       <Layout>
+        <Meta
+          data={SEO}
+        />
         <Categories/>
         <NoteStyle>
           <img 

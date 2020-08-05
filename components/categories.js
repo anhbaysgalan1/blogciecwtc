@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {CategoriesStyle, Btn} from './ui/general';
+import {CategoriesStyle} from './ui/general';
 import useNotas from '../hooks/useNotas';
 import Category from './category';
 

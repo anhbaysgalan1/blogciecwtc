@@ -1,20 +1,14 @@
 import React from 'react';
-import Head from 'next/head'
 import Link from 'next/link'
 
+import Meta from './meta';
 import Header from './header'
 import Footer from './footer'
 
 const Layout = props => {
     return (
         <div>
-            <Head>
-                <title>Blog - Centro Internacional de Exposiciones y Convenciones WTC</title>
-                <meta name="description" content="Blog del Centro Internacional de Exposiciones y Convenciones WTC"/>
-                <meta name="keywords" content="CIECWTC, WTC, HIR Expo Internacional, Blog, Turismo de Reuniones"/>
-                <link rel="icon" href="/favicon.ico" />
-                <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,600;1,400&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
-            </Head>
+            <Meta/>
             <Header/>
             <main>
                 {props.children}
@@ -26,7 +20,7 @@ const Layout = props => {
                 padding: 0;
                 margin: 0;
                 font-family: 'Poppins', sans-serif;
-                color:#3f3f3f;s
+                color:#3f3f3f;
                 background-color:#ffffff;
             }
             * {

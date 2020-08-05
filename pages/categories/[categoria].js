@@ -30,7 +30,7 @@ const Categoria = () => {
         guardarResultado(filtro);
     }, [categoria, notas]);
 
-    console.log(resultado);
+    //console.log(resultado);
     return (
         <Layout>
             <Hero

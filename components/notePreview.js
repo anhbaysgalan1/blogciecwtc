@@ -5,7 +5,7 @@ import {NotePreviewStyle} from './ui/general';
 
 const NotePreview = ({nota}) => {
 
-    const {id, categoria, titulo, preview, urlimagen, lectura, slug} = nota;
+    const {id, categoria, titulo, preview, urlimagen, lectura} = nota;
     
     return ( 
         <NotePreviewStyle>
