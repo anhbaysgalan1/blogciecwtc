@@ -62,9 +62,17 @@ const Note = () => {
     var URLLinkedin = 'https://www.linkedin.com/sharing/share-offsite/?url=' + URL;
     var URLYoutube = 'https://www.youtube.com/embed/' + youtube;
     
+    
     const SEO = {
       title: titulo,
-      description: preview    
+      description: preview,
+      openGraph: {
+          type: 'website',
+          url: URL,
+          title: titulo,
+          description: preview,
+          image: urlimagen,
+      }    
     };
 
     return (
